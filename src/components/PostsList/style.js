@@ -29,6 +29,7 @@ export const Button = styled.button`
 export const PostButton = Button.extend`
     background: ${props => (!props.selected ? '#e8e9eb' : '#d3d4d6')};
     position: relative;
+    padding: 0 2em;
     .delete {
         width: 20px;
         height: 20px;
@@ -61,7 +62,7 @@ export const CreateButtonWrapper = Button.extend`
     transition: 0.15s ease all;
     font-size: 2em;
     &:after {
-      content: '+';
+        content: '+';
     }
     &:hover,
     &:focus {

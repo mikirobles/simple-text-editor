@@ -31,7 +31,6 @@ h1,h2,h3 {
 const LayoutWrapper = styled.div`
     display: grid;
     grid-template-columns: 300px auto;
-    grid-template-rows: 80px auto;
     min-height: 100vh;
     width: 100%;
     background: hsl(${props => props.bgColor || 1}, 38%, 58%);;
@@ -56,9 +55,6 @@ const LayoutWrapper = styled.div`
 
 export default ({ children, bgColor }) => (
     <LayoutWrapper bgColor={bgColor}>
-        <header>
-            <h1>Mikisoft Word</h1>
-        </header>
         <React.Fragment>{children}</React.Fragment>
     </LayoutWrapper>
 );
