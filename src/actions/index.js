@@ -13,14 +13,18 @@ export const editPost = ({ id, field, value }) => {
         payload: {
             [field]: value
         }
-    }
+    };
 };
 
-export const viewPost = ({ id }) => ({
-    type: 'CHANGE_POST_VIEW',
-    payload: {
-        id
-    }
+export const deletePost = ({id}) =>  ({
+    type: 'DELETE_POST',
+    id
 });
 
-
+export const setRandomBg = () => {
+    const hValue = Math.floor(Math.random()*350)+1;
+    return {
+        type: 'SET_BACKGROUND_COLOR',
+        payload: hValue
+    }
+}

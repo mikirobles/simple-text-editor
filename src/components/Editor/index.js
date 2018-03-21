@@ -8,7 +8,9 @@ const EditorWrapper = styled.section`
     max-width: 700px;
     margin: auto;
     color: #313638;
-    height: calc(100vh - var(--header-height));
+    background: #e8eaeb;
+    box-shadow: 1px 9px 20px #0000000d;
+    height: 80%;
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -25,7 +27,7 @@ const EditorWrapper = styled.section`
     }
     .post-input {
         width: 100%;
-        height: 40vh;
+        height: 100%;
         resize: none;
         border: none;
         outline: none;

@@ -30,14 +30,15 @@ h1,h2,h3 {
 `;
 
 const LayoutWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 80px auto;
     min-height: 100vh;
     width: 100%;
-    background: #e8e9eb;
+    background: hsl(${props => props.bgColor || 1}, 38%, 58%);;
     --header-height: 2.5em;
     header {
-        height: var(--header-height);
+        grid-column: 1 / 3;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -50,16 +51,22 @@ const LayoutWrapper = styled.div`
     .container {
         display: flex;
         flex-direction: row;
+        grid-column: 1 / 3;
     }
 `;
 
 
-export default ({ children }) => (
-    <LayoutWrapper>
+const Layout = ({ children, bgColor }) => (
+    <LayoutWrapper bgColor={bgColor}>
         <header>
             <h1>Mikisoft Word</h1>
         </header>
-        <div className="container">{children}</div>
+        <React.Fragment>{children}</React.Fragment>
     </LayoutWrapper>
 );
 
+const mapStateToProps = state => ({
+    bgColor: state.background
+})
+
+export default connect(mapStateToProps)(Layout)
