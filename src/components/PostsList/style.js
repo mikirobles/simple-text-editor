@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 
 export const PostsListWrapper = styled.div`
+    --gap-size: 15px;
     grid-column: 1 / 2;
     display: grid;
     grid-template-columns: 1fr;
     grid-auto-rows: min-content;
-    grid-gap: 20px;
-    padding: 20px;
+    grid-gap: var(--gap-size);
+    padding: var(--gap-size);
     background: #5f4b66;
     box-shadow: inset -4px 0px 11px 0px #00000038;
 `;
 
 export const Button = styled.button`
     height: 80px;
+    grid-column: 1 / 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
     cursor: pointer;
     display: flex;
     justify-content: center;

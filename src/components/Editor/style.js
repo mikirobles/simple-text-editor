@@ -6,11 +6,12 @@ export default styled.section`
     margin: auto;
     color: #313638;
     background: #e8eaeb;
+    border-radius: 20px;
     box-shadow: 1px 9px 20px #0000000d;
     height: 80%;
     display: flex;
     flex-direction: column;
-    padding: 1em;
+    padding: 1.5em;
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
     .title-input {

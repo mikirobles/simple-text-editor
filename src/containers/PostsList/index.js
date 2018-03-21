@@ -6,9 +6,4 @@ const mapStateToProps = state => ({
     posts: state.posts
 });
 
-const mapDispatchToProps = dispatch => ({
-    addPost: id => dispatch(addPost({ id })),
-    deletePost: id => dispatch(deletePost({ id }))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(PostsList);
+export default connect(mapStateToProps, {addPost, deletePost})(PostsList);
