@@ -1,5 +1,4 @@
 import styled, { injectGlobal } from 'styled-components';
-import { connect } from 'react-redux';
 import React from 'react';
 
 injectGlobal`
@@ -55,8 +54,7 @@ const LayoutWrapper = styled.div`
     }
 `;
 
-
-const Layout = ({ children, bgColor }) => (
+export default ({ children, bgColor }) => (
     <LayoutWrapper bgColor={bgColor}>
         <header>
             <h1>Mikisoft Word</h1>
@@ -64,9 +62,3 @@ const Layout = ({ children, bgColor }) => (
         <React.Fragment>{children}</React.Fragment>
     </LayoutWrapper>
 );
-
-const mapStateToProps = state => ({
-    bgColor: state.background
-})
-
-export default connect(mapStateToProps)(Layout)

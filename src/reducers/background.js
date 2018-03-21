@@ -1,4 +1,4 @@
-const randomColor = Math.floor(Math.random()*350)+1;
+const randomColor = Math.floor(Math.random() * 350) + 1;
 
 const background = (state = randomColor, action) => {
     switch (action.type) {

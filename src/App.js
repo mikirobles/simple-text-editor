@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { setRandomBg } from "./actions/index";
-import Layout from './components/Layout';
-import PostsList from './components/PostsList';
-import Editor from './components/Editor';
+import Layout from './containers/Layout';
+import PostsList from './containers/PostsList';
+import Editor from './containers/Editor';
 import { connect } from 'react-redux';
 
 class App extends Component {
