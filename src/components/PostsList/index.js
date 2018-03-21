@@ -40,7 +40,7 @@ class PostList extends React.Component {
                 );
                 if (nextPost) {
                     this.props.viewPost(nextPost.id);
-                    this.props.deletePost(this.state.modal.id);
+                    this.props.deletePost({id: this.state.modal.id});
                 }
                 this.closeModal();
             }}
