@@ -22,11 +22,11 @@ const initialModalState = {
 class PostList extends React.Component {
     state = initialModalState;
 
-    showModal = id => {
+    showModal = date => {
         this.setState({
             modal: {
                 show: true,
-                id: id
+                date: date
             }
         });
     };
@@ -36,11 +36,11 @@ class PostList extends React.Component {
             text={'Are you sure you want to delete this post?'}
             onConfirm={() => {
                 const nextPost = this.props.posts.find(
-                    post => post.id !== this.state.modal.id
+                    post => post.date !== this.state.modal.date
                 );
                 if (nextPost) {
-                    this.props.viewPost(nextPost.id);
-                    this.props.deletePost({id: this.state.modal.id});
+                    this.props.viewPost(nextPost.date);
+                    this.props.deletePost({date: this.state.modal.date});
                 }
                 this.closeModal();
             }}
@@ -54,27 +54,27 @@ class PostList extends React.Component {
 
     render() {
         const { posts, addPost, viewPost, currentPost } = this.props;
-        const sortedPosts = posts ? posts.sort((a, b) => a.id - b.id) : null;
+        const sortedPosts = posts && posts.sort((a, b) => a.date - b.date);
         return (
             <Fragment>
                 <PostsListWrapper>
                     {posts &&
                         sortedPosts.map((post, i) => (
                             <PostButton
-                                onClick={() => viewPost(post.id)}
+                                onClick={() => viewPost(post.date)}
                                 key={i}
-                                selected={post.id === currentPost}
+                                selected={post.date === currentPost}
                             >
                                 {posts.length > 1 ? (
                                     <DeleteButton
-                                        onClick={() => this.showModal(post.id)}
+                                        onClick={() => this.showModal(post.date)}
                                     />
                                 ) : null}
-                                {post.title}
+                                {post.title || <span>Untitled {post.text && `(${post.text.split(' ').slice(0,3).join(' ')}...)`}</span>}
                             </PostButton>
                         ))}
                     <CreateButton
-                        onClick={() => addPost(posts[posts.length - 1].id + 1)}
+                        onClick={addPost}
                     />
                 </PostsListWrapper>
                 {this.state.modal.show && this.confirmDeleteModal()}

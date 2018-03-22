@@ -7,15 +7,15 @@ const posts = (state = [], action) => {
             return [...state, action.payload];
         case 'EDIT_POST':
             return [
-                ...state.filter(post => post.id !== action.id),
+                ...state.filter(post => post.date !== action.date),
                 {
-                    ...state.find(post => post.id === action.id),
+                    ...state.find(post => post.date === action.date),
                     ...action.payload
                 }
             ];
         case 'DELETE_POST':
             return [
-                ...state.filter(post => post.id !== action.id),
+                ...state.filter(post => post.date !== action.date),
             ];
         default:
             return state;

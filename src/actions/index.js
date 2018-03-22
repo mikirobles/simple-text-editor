@@ -5,27 +5,26 @@ const actionTypes = {
     SET_BACKGROUND_COLOR: 'SET_BACKGROUND_COLOR'
 };
 
-export const addPost = ({ id }) => ({
+export const addPost = () => ({
     type: actionTypes.ADD_POST,
     payload: {
-        id: id,
-        date: new Date()
+        date: new Date().getTime()
     }
 });
 
-export const editPost = ({ id, field, value }) => {
+export const editPost = ({ date, field, value }) => {
     return {
         type: actionTypes.EDIT_POST,
-        id,
+        date,
         payload: {
             [field]: value
         }
     };
 };
 
-export const deletePost = ({ id }) => ({
+export const deletePost = ({ date }) => ({
     type: actionTypes.DELETE_POST,
-    id
+    date
 });
 
 export const setRandomBg = () => {

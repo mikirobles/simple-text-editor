@@ -33,7 +33,8 @@ const LayoutWrapper = styled.div`
     grid-template-columns: 300px auto;
     min-height: 100vh;
     width: 100%;
-    background: hsl(${props => props.bgColor || 1}, 38%, 58%);;
+    --background-color: ${props => props.bgColor || 1};
+    background: hsl(var(--background-color), 38%, 58%);;
     --header-height: 2.5em;
     header {
         grid-column: 1 / 3;

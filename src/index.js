@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 const initialState = {
     posts: [
         {
-            id: 0,
+            date: new Date().getTime(),
             title: 'Welcome!',
             text: `You can edit this post, or create new ones!. \nEverything will be saved in your browser, so don't worry!`
         }

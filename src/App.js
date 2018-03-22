@@ -7,13 +7,13 @@ import { connect } from 'react-redux';
 
 class App extends Component {
     state = {
-        currentPost: this.props.posts[0].id
+        currentPost: this.props.posts[0].date
     };
 
-    viewPost = id => {
-        if (id !== this.state.currentPost) {
+    viewPost = date => {
+        if (date !== this.state.currentPost) {
             this.props.setRandomBg();
-            this.setState({ currentPost: id });
+            this.setState({ currentPost: date });
         }
     };
 
@@ -26,7 +26,7 @@ class App extends Component {
                 />
                 <Editor
                     post={this.props.posts.find(
-                        post => post.id === this.state.currentPost
+                        post => post.date === this.state.currentPost
                     )}
                 />
             </Layout>

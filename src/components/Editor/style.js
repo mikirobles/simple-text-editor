@@ -14,6 +14,15 @@ export default styled.section`
     padding: 1.5em;
     font-family: 'Lato', sans-serif;
     box-sizing: border-box;
+    .text-box {
+        position: relative;
+        height: 100%;
+    }
+    .switch-container {
+      margin: 0 0 0.7em 0;
+      display: flex;
+      justify-content: flex-end;
+    }
     .title-input {
         margin-bottom: 0.5em;
         padding: 0.2em 0em;
@@ -30,8 +39,32 @@ export default styled.section`
         border: none;
         outline: none;
         background-color: #0000000a;
+        line-height: 1.5;
         padding: 0.5em;
         font-size: 1.2em;
         box-sizing: border-box;
+    }
+    .markdown {
+    line-height: 1.5;
+    max-height: 80vh;
+    overflow: scroll;
+            background-color: #0000000a;
+      padding: 0.5em;
+      height: 100%;
+      h1 {
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1.7em;
+      }
+      h1, h2 {
+        margin: 0.5em 0;
+      }
+      p, li {
+        margin: 0.2em 0;
+      }
+      h3 {
+        font-size: 1.5em;
+      }
     }
 `;
