@@ -45,26 +45,11 @@ export default styled.section`
         box-sizing: border-box;
     }
     .markdown {
-    line-height: 1.5;
-    max-height: 80vh;
-    overflow: scroll;
-            background-color: #0000000a;
-      padding: 0.5em;
-      height: 100%;
-      h1 {
-        font-size: 2em;
-      }
-      h2 {
-        font-size: 1.7em;
-      }
-      h1, h2 {
-        margin: 0.5em 0;
-      }
-      p, li {
-        margin: 0.2em 0;
-      }
-      h3 {
-        font-size: 1.5em;
-      }
+        line-height: 1.5;
+        max-height: 80vh;
+        overflow: scroll;
+        background-color: #0000000a;
+        padding: 0.5em;
+        height: 100%;
     }
 `;

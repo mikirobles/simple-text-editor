@@ -2,6 +2,7 @@ import React from 'react';
 import EditorWrapper from './style';
 import EditorSwitch from '../EditorSwitch';
 import ReactMarkdown from 'react-markdown';
+import './github-markdown.css';
 
 export default class extends React.PureComponent {
     state = {
@@ -43,7 +44,7 @@ export default class extends React.PureComponent {
                             cols="30"
                             rows="10"
                         />
-                    ) : <ReactMarkdown className={'markdown'} source={post.text} />}
+                    ) : <ReactMarkdown className={'markdown markdown-body'} source={post.text} />}
             </EditorWrapper>
         );
     }
